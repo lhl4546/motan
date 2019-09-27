@@ -211,8 +211,8 @@ public abstract class AbstractRegistry implements Registry {
         }
 
         // refresh local urls cache
-        for (String nodeType : nodeTypeUrlsInRs.keySet()) {
-            curls.put(nodeType, nodeTypeUrlsInRs.get(nodeType));
+        for (Map.Entry<String, List<URL>> entry : nodeTypeUrlsInRs.entrySet()) {
+            curls.put(entry.getKey(), entry.getValue());
         }
 
         for (List<URL> us : nodeTypeUrlsInRs.values()) {
